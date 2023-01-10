@@ -10,8 +10,7 @@
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
-  let fullDate = `${day}/${month}/${year}`
-
+  let fullDate 
   const showData = (fullDate) =>{
     let dishes
     try{
@@ -60,7 +59,6 @@
   const dayClicked = (evt) =>{
     const target = evt.target.closest('li')
     const day = Number.isNaN(parseInt(target.innerHTML)) ? target.children[0].innerHTML : target.innerHTML
-    console.log(`${day}/${month+1}/${year}`)
     showData(`${day}/${month+1}/${year}`)
   }
   const changeMonth = (value) =>{
@@ -79,5 +77,6 @@
   document.querySelector('.calendar__header svg').addEventListener('click', () => {changeMonth(-1)})
   document.querySelector('.calendar__header svg:last-child').addEventListener('click', () => {changeMonth(1)})
   renderCalendar()
+  fullDate = `${day}/${month+1}/${year}`
   showData(fullDate)
 })();
