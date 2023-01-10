@@ -671,19 +671,30 @@ nav ul li div {
   border-collapse: collapse;
   background-color: white;
   cursor: pointer;
+  position: relative;
 }
 
-.calendar__body li:hover{
+.calendar__body li:not(.inactive):hover{
   color: white;
   background-color: rgba(255, 0, 0, 0.7);
 }
 
-.calendar__body .inative{
+.calendar__body .outdated{
+  background-color: rgba(0,0,0,.10);
+  cursor: default;
+}
+
+.calendar__body .outdated.outdated:hover{
+  background-color: rgba(0,0,0,.10);
+  color: initial;
+}
+
+.calendar__body .inactive{
   color:rgba(128, 128, 128, 0.533);
   cursor: unset;
 }
 
-.calendar__body .active{
+.calendar__body .current{
   background-color: orange;
   color: white;
   width: 50px;
@@ -693,6 +704,15 @@ nav ul li div {
   justify-content: center;
   align-items: center;
   position: absolute;
+}
+
+.calendar__body .active{
+  background-color: red;
+  position: absolute;
+  bottom: 25px;
+  width: 50px;
+  height: 5px;
+  transition: all 0.5s;
 }
 
 .note{
