@@ -20,6 +20,7 @@
     "Dezembro",
   ];
   const monthText = document.querySelector(".calendar__header p");
+  const yearText = document.querySelector(".calendar__header .year");
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
@@ -50,9 +51,8 @@
   };
   const renderCalendar = () => {
     monthText.innerHTML = months[month];
-
+    yearText.innerHTML = year
     const lastDay = new Date(year, month + 1, 0).getDate();
-
     const startWeekDay = new Date(year, month, 1).getDay();
     const lastWeekDay = new Date(year, month, lastDay).getDay();
     const calendar = document.querySelector(".calendar__body ol");
@@ -74,11 +74,10 @@
 
     calendar.innerHTML = dayTag;
     calendar.querySelectorAll("li:not(.prev)").forEach((li) => {
-      if (
-        (parseInt(li.innerText) < 25 && month < 11 && year == 2022) ||
-        (li.classList.contains("last") && month < 11 && year == 2022)
-      )
-        li.classList.add("outdated");
+      if (month < 11 && year == 2022) {
+        if (parseInt(li.innerText) < 25 || li.classList.contains("last"))
+          li.classList.add("outdated");
+      }
     });
   };
   const dayClicked = (evt) => {
@@ -120,7 +119,7 @@
     }
     renderCalendar();
   };
-
+  
   document
     .querySelector(".calendar__body ol")
     .addEventListener("click", dayClicked);
@@ -134,6 +133,7 @@
     .addEventListener("click", function () {
       changeMonth(1);
     });
+
   fullDate = `${day}/${month + 1}/${year}`;
   renderCalendar();
   showData(fullDate);
