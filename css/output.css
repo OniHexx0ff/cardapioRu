@@ -736,6 +736,7 @@ nav ul li div {
 dl{
   padding: 1rem;
   width: 90%;
+  text-align: center;
 }
 
 dl, dt, dd{
@@ -757,10 +758,33 @@ dt{
     flex-wrap: wrap;
     height: -moz-fit-content;
     height: fit-content;
+    padding: 2rem;
   }
 
   .calendar, .note{
     width: 100%;
-    height: 600px;
+    height: 400px;
+  }
+
+  .calendar{
+    margin-bottom: 2rem;
+  }
+
+  .calendar__body .active{
+    background-color: red;
+    position: absolute;
+    bottom: 5px;
+    width: 50px;
+    height: 5px;
+    transition: all 0.5s;
+  }
+
+  .calendar__body li:not(.inactive):hover{
+    color: unset;
+    background-color: white
+  }
+
+  dl{
+    width: 100%;
   }
 }
