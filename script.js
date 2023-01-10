@@ -51,7 +51,7 @@
   };
   const renderCalendar = () => {
     monthText.innerHTML = months[month];
-    yearText.innerHTML = year
+    yearText.innerHTML = `<p>${year}</p>`
     const lastDay = new Date(year, month + 1, 0).getDate();
     const startWeekDay = new Date(year, month, 1).getDay();
     const lastWeekDay = new Date(year, month, lastDay).getDay();

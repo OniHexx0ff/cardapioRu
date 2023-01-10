@@ -770,11 +770,16 @@ dt{
     margin-bottom: 2rem;
   }
 
+  .note{
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
   .calendar__body .active{
     background-color: red;
     position: absolute;
     bottom: 5px;
-    width: 50px;
+    width: 70%;
     height: 5px;
     transition: all 0.5s;
   }
@@ -782,6 +787,29 @@ dt{
   .calendar__body li:not(.inactive):hover{
     color: unset;
     background-color: white
+  }
+
+  .calendar__body .current{
+    width: 80%;
+    height: 80%;
+  }
+
+  .calendar__header .year{
+    color: black;
+    width: 100%;
+    right: unset;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar__header .year p{
+    font-size: 16px;
+  }
+
+  .calendar__header .arrows{
+    flex-wrap: wrap;
   }
 
   dl{
