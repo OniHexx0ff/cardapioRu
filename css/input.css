@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nav-height: 90px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #f5f7fa;
+  padding: 40px 0;
+  box-sizing: border-box;
+  font-family: Montserrat, "sans-serif";
+  color: #51565d;
+}
+
+body,
+button,
+section {
+  font-family: sans-serif;
+}
+html body {
+  padding: 0;
+}
+nav ul {
+  height: var(--nav-height);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li a {
+  /* background-color: green; */
+  padding: 1rem;
+  display: block;
+  font-size: 24px;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.7);;
+  left: 0;
+  margin: 0 auto;
+  width: 0%;
+  height: 3px;
+  bottom: 10px;
+  transition: all 0.2s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li div {
+  text-align: center;
+  margin: 0 1rem 0 1rem;
+}
+
+
+#historic {
+  height: calc(100vh - var(--nav-height));
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.calendar, .note{
+  width: 45%;
+  height: 700px;
+  box-shadow:  0px 0px 12px rgba(0,0,0,.25);
+  border-radius: 0.25rem;
+  /* background-color: rgba(0,0,0,.25); */
+  /* background-color:  red; */
+}
+
+.calendar__header{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.calendar__header .arrows{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+.calendar__header .arrows p{
+  font-size: 20px;
+  color: black;
+}
+.calendar__header .arrows *{
+  margin-left: 2rem;
+}
+.calendar__header .arrows svg{
+  cursor: pointer;
+}
+.calendar__header .arrows svg:hover{
+  color: black;
+}
+.calendar__header .arrows svg:first-child{
+  margin-left: 0;
+}
+
+.calendar__body{
+  height: calc(100% - 100px);
+  
+}
+.calendar__body ol, .calendar__header ol{ 
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  box-sizing: border-box;
+
+
+  /* grid-template-rows: repeat(6, 1fr);/ */
+}
+.calendar__header li{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
+
+}
+.calendar__body li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+  background-color: white;
+  cursor: pointer;
+
+}
+.calendar__body li:hover{
+  color: white;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.calendar__body .inative{
+  color:rgba(128, 128, 128, 0.533);
+  cursor: unset;
+}
+
+.calendar__body .active{
+ background-color: orange;
+ color: white;
+ width: 50px;
+ height: 50px;
+ border-radius: 100px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+
+}
+
+.note{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+dl{
+  padding: 1rem;
+  width: 90%;
+}
+dl, dt, dd{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: auto;
+}
+dt{
+ font-weight: bold;
+ font-size: 20px;
+ width: 100%;
+}

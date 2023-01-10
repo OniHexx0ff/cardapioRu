@@ -24,73 +24,55 @@
         </li>
       </ul>
     </nav>
-    <section id="calendar" class="container-lg m-auto">
-      <div class="calendar-container">
-        <div class="calendar-header">
-          <h1 id="month">
-            Novembro
-            <button>▾</button>
-          </h1>
-          <p id="year">2022</p>
+    <section id="historic" class="container-lg m-auto">
+      <div class="calendar">
+        <div class="calendar__header">
+          <div class="arrows">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+            <p>Janeiro</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+          <ol>
+            <li>Dom</li>
+            <li><span>Seg</span></li>
+            <li><span>Ter</span></li>
+            <li><span>Qua</span></li>
+            <li><span>Qui</span></li>
+            <li><span>Sex</span></li>
+            <li><span>Sab</span></li>
+          </ol>
         </div>
-        
-        <div class="calendar">
-          <span class="day-name">Seg</span><span class="day-name">Ter</span
-          ><span class="day-name">Qua</span><span class="day-name">Qui</span
-          ><span class="day-name">Sex</span><span class="day-name">Sab</span
-          ><span class="day-name">Dom</span>
-          <div class="day day--disabled">30</div>
-          <div class="day day--disabled">31</div>
-          <div class="day valid">1</div>
-          <div class="day valid">2</div>
-          <div class="day valid">3</div>
-          <div class="day valid">4</div>
-          <div class="day valid">5</div>
-          <div class="day valid">6</div>
-          <div class="day valid">7</div>
-          <div class="day valid">8</div>
-          <div class="day valid">9</div>
-          <div class="day valid">10</div>
-          <div class="day valid">11</div>
-          <div class="day valid">12</div>
-          <div class="day valid">13</div>
-          <div class="day valid">14</div>
-          <div class="day valid">15</div>
-          <div class="day valid">16</div>
-          <div class="day valid">17</div>
-          <div class="day valid">18</div>
-          <div class="day valid">19</div>
-          <div class="day valid">20</div>
-          <div class="day valid">21</div>
-          <div class="day valid">22</div>
-          <div class="day valid">23</div>
-          <div class="day valid">24</div>
-          <div class="day valid">25</div>
-          <div class="day valid">26</div>
-          <div class="day valid">27</div>
-          <div class="day valid">28</div>
-          <div class="day valid">29</div>
-          <div class="day valid">30</div>
-          <div class="day valid">31</div>
-          <div class="day day--disabled">1</div>
-          <div class="day day--disabled">2</div>
-          
-          <!-- <section class="task task--warning">Projects</section>
-          <section class="task task--danger">Design Sprint</section>
-          <section class="task task--primary">
-            Product Checkup 1
-            <div class="task__detail">
-              <h2>Product Checkup 1</h2>
-              <p>15-17th November</p>
-            </div>
-          </section> -->
-          <!-- <section class="task task--info">Product Checkup 2</section> -->
-        </div>
-        <div class="calendar-note">
-
+        <div class="calendar__body">
+          <ol></ol>
         </div>
       </div>
-      
+      <div class="note"></div>
     </section>
   </body>
 </html>
