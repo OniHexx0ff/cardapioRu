@@ -690,12 +690,12 @@ nav ul li div {
 }
 
 .calendar__body .outdated{
-  background-color: rgba(0,0,0,.10);
+  background-color: rgba(159, 159, 159, 0.15);
   cursor: default;
 }
 
 .calendar__body .outdated.outdated:hover{
-  background-color: rgba(0,0,0,.10);
+  background-color: rgba(159, 159, 159, 0.15);
   color: initial;
 }
 

@@ -51,7 +51,7 @@
   };
   const renderCalendar = () => {
     monthText.innerHTML = months[month];
-    yearText.innerHTML = `<p>${year}</p>`
+    yearText.innerHTML = `<p>${year}</p>`;
     const lastDay = new Date(year, month + 1, 0).getDate();
     const startWeekDay = new Date(year, month, 1).getDay();
     const lastWeekDay = new Date(year, month, lastDay).getDay();
@@ -73,12 +73,24 @@
       dayTag += `<li class="inactive prev">${i - lastWeekDay + 1}</li>`;
 
     calendar.innerHTML = dayTag;
-    calendar.querySelectorAll("li:not(.prev)").forEach((li) => {
-      if (month < 11 && year == 2022) {
-        if (parseInt(li.innerText) < 25 || li.classList.contains("last"))
-          li.classList.add("outdated");
-      }
-    });
+
+    const lis =  calendar.querySelectorAll("li")
+    // outdated value
+    lis.forEach(li => {
+      let currentMonth = month + 1
+      const cellDate = `${parseInt(li.innerText)}/${currentMonth}/${year}`
+      console.log(cellDate)
+      if (!data[cellDate] && !li.classList.contains('prev') && !li.classList.contains('last')) li.classList.add('outdated')
+    })
+    // lis.forEach((li) => {
+    //   if (month < 11 && year == 2022 && !li.classList.contains("prev")) {
+    //     if (parseInt(li.innerText) < 25 || li.classList.contains("last"))
+    //       li.classList.add("outdated");
+    //   }
+    // });
+
+
+
   };
   const dayClicked = (evt) => {
     const target = evt.target.closest("li");
@@ -119,7 +131,7 @@
     }
     renderCalendar();
   };
-  
+
   document
     .querySelector(".calendar__body ol")
     .addEventListener("click", dayClicked);
