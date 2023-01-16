@@ -125,9 +125,9 @@ function init (data) {
       target.classList.contains("outdated")
     )
       return; 
-     document.querySelector(".active").classList.remove("active");
+     document.querySelector(".active")?.classList.remove("active");
     target.children[target.children.length - 1].classList.add("active");
-    fullDate = `${target.innerText}/${today.getMonth() + 1}/${today.getFullYear()}`
+    fullDate = `${target.innerText}/${calendarDate.getMonth() + 1}/${calendarDate.getFullYear()}`
     showData();
   };
 
