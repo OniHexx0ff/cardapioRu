@@ -12,10 +12,10 @@ for x in range(7):
 	for row in response['rows'][3:6]:
 		cardapio_obj[row['nome']] = row['descricao']
 
-	with open('cardapio/dist/cardapio.json') as f:
+	with open('cardapio.json') as f:
 		content = json.load(f)
 	content.update({data: cardapio_obj})
 
-	with open('cardapio/dist/cardapio.json', 'w', encoding="utf-8") as f:
+	with open('cardapio.json', 'w', encoding="utf-8") as f:
 	    json.dump(content, f, ensure_ascii=False)
 
