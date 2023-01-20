@@ -10,13 +10,6 @@ cardapio_obj = {}
 print('DATA: ', data)
 print('-----------------')
 print('')
-for row in response['rows']:
-	print(row['nome'].lower())
-print('')
-print('-----------------')
-print('')
-print('INGREDIENTES')	
-print('')
 for row in response['rows'][3:6]:
 	print(row['nome'])
 	cardapio_obj[row['nome']] = row['descricao']
