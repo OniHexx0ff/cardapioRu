@@ -217,7 +217,7 @@ function renderCards(){
   for (let item of (Array.from(dishes).sort(sortAlpha))){
     let [title, content] = item.split('*')
     content = content.replace('.', '').split(',')
-    
+
     const newCard = document.createElement('div')
     newCard.className = "card"
     newCard.insertAdjacentHTML('afterbegin',` 
@@ -252,7 +252,7 @@ onMounted(() => {
 #dishes {
   height: 800px;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -262,7 +262,8 @@ onMounted(() => {
   height: fit-content;
   background-color: rgba(128, 128, 128, 0.234);
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(auto-fill, minmax(400px, max-content)); 
+  gap: 1rem;
 }
 
 .calendar,
@@ -473,7 +474,7 @@ dt {
   height: 69%;
   font-size: 22px;
   text-align: center;
-  overflow: scroll;
+  overflow: hidden;
   padding: 2rem
 }
 .card__content ul{
