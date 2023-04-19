@@ -1,2 +1,1 @@
-# Cardapio Ru Pelotas
 
